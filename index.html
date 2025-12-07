@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atelier des Éclats | Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1f1b2c;
+      --blush: #f9d8d8;
+      --sand: #fff7ed;
+      --lavender: #d8dcff;
+      --forest: #2d4a4d;
+      --accent: #e47c81;
+      --shadow: rgba(31, 27, 44, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at 20% 20%, #fff2f2, #fff),
+        radial-gradient(circle at 80% 0%, #f2f4ff, transparent 50%),
+        radial-gradient(circle at 10% 80%, #f5f8f3, transparent 45%);
+      color: var(--ink);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    header {
+      position: relative;
+      overflow: hidden;
+      padding: 72px 6vw 88px;
+      background: linear-gradient(120deg, rgba(232, 200, 209, 0.65), rgba(216, 220, 255, 0.7)),
+        radial-gradient(circle at 30% 20%, rgba(244, 194, 194, 0.5), transparent 45%),
+        linear-gradient(180deg, #ffffff 0%, #fdfbf8 100%);
+      border-bottom: 1px solid rgba(31, 27, 44, 0.06);
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      inset: 10% 5% auto 55%;
+      height: 160px;
+      background: radial-gradient(circle, rgba(46, 103, 99, 0.15) 0%, transparent 60%);
+      filter: blur(24px);
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.75);
+      color: var(--forest);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 13px;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(6px);
+    }
+
+    .eyebrow::before {
+      content: '◦';
+      color: var(--accent);
+      font-size: 18px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      font-size: clamp(38px, 4vw, 56px);
+      margin: 8px 0 16px;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .tagline {
+      font-size: 18px;
+      max-width: 560px;
+      color: #342f46;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 18px;
+      align-items: center;
+    }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      border-radius: 14px;
+      padding: 12px 18px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+      font-size: 15px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(120deg, #e47c81, #f09f9f);
+      color: #fff;
+      box-shadow: 0 16px 30px rgba(228, 124, 129, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 32px rgba(228, 124, 129, 0.35);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--forest);
+      border: 1px solid rgba(31, 27, 44, 0.08);
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.72);
+      border-radius: 18px;
+      padding: 20px;
+      border: 1px solid rgba(31, 27, 44, 0.05);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+      backdrop-filter: blur(6px);
+    }
+
+    .glow-note {
+      display: grid;
+      gap: 12px;
+      font-size: 15px;
+      color: #3d384d;
+    }
+
+    .quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      line-height: 1.4;
+      color: #2e2a3d;
+    }
+
+    .signature {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 52px 6vw 90px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 18px;
+      padding: 18px;
+      border: 1px solid rgba(31, 27, 44, 0.05);
+      box-shadow: 0 12px 22px var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: '';
+      position: absolute;
+      inset: auto 16px 14px 16px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(228, 124, 129, 0.35), transparent);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(45, 74, 77, 0.08);
+      color: var(--forest);
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .pill svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+    }
+
+    .card p {
+      margin: 6px 0 8px;
+      color: #423d54;
+      font-size: 15px;
+    }
+
+    .timeline {
+      margin: 36px 0 16px;
+      padding-left: 12px;
+      border-left: 2px dashed rgba(31, 27, 44, 0.15);
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 14px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -14px;
+      top: 7px;
+      width: 10px;
+      height: 10px;
+      background: #e47c81;
+      border-radius: 50%;
+      box-shadow: 0 0 0 8px rgba(228, 124, 129, 0.12);
+    }
+
+    .timeline .label {
+      font-weight: 700;
+      color: var(--forest);
+      margin-bottom: 4px;
+    }
+
+    .poem {
+      background: linear-gradient(160deg, rgba(45, 74, 77, 0.08), rgba(228, 124, 129, 0.12));
+      border-radius: 18px;
+      padding: 16px 18px;
+      font-family: 'Playfair Display', serif;
+      color: #2c2a3a;
+      line-height: 1.5;
+      margin-top: 28px;
+    }
+
+    .form-wrapper {
+      margin-top: 40px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 18px;
+      padding: 20px;
+      border: 1px solid rgba(31, 27, 44, 0.08);
+      box-shadow: 0 14px 30px var(--shadow);
+    }
+
+    iframe {
+      width: 100%;
+      border: none;
+      height: 860px;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: inset 0 0 0 1px rgba(31, 27, 44, 0.06);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 16px 48px;
+      color: #5a556d;
+      font-size: 14px;
+    }
+
+    @media (max-width: 640px) {
+      header { padding: 58px 6vw 64px; }
+      .cta-row { flex-direction: column; align-items: flex-start; }
+      iframe { height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Invitation intime</div>
+        <h1>Atelier des Éclats<br />Fragments d'émotions à partager</h1>
+        <p class="tagline">Une parenthèse douce pour révéler la poésie d'un projet : couleurs diaphanes, voix discrètes, gestes qui racontent. Bienvenue dans un espace conçu pour écouter, recueillir et transmettre.</p>
+        <div class="cta-row">
+          <button class="btn btn-primary" onclick="document.getElementById('formulaire').scrollIntoView({ behavior: 'smooth' });">Répondre au formulaire</button>
+          <button class="btn btn-ghost" onclick="document.getElementById('essence').scrollIntoView({ behavior: 'smooth' });">Découvrir l'atmosphère</button>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="glow-note">
+          <p class="quote">« Nous récoltons des éclats de voix comme on cueille des pétales, pour composer un bouquet d'idées et de présences. »</p>
+          <div class="signature">— Atelier</div>
+          <p>Quelques minutes suffisent pour laisser votre empreinte : ce questionnaire guide vos ressentis, vos envies et vos curiosités. Merci d'avance pour ce partage.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="essence">
+      <h2 class="section-title">L'essence du projet</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="pill">
+            <svg viewBox="0 0 24 24"><path d="M12 3v18M5 9l7-6 7 6" /></svg>
+            Origine
+          </div>
+          <p>Une rencontre entre artisanat et rêverie : des objets qui parlent au cœur, des expériences qui apaisent la mémoire.</p>
+        </article>
+        <article class="card">
+          <div class="pill">
+            <svg viewBox="0 0 24 24"><path d="M12 5a7 7 0 1 1-7 7h14a7 7 0 0 1-7-7z" /></svg>
+            Couleurs
+          </div>
+          <p>Un nuancier de poudré, de brume et de feuilles mouillées pour envelopper l'œil d'une lumière feutrée.</p>
+        </article>
+        <article class="card">
+          <div class="pill">
+            <svg viewBox="0 0 24 24"><path d="M4 12h5l2-4 2 8 2-4h5" /></svg>
+            Rythme
+          </div>
+          <p>Des séquences lentes, des respirations, l'idée d'un carnet que l'on feuillette avant de confier ses réponses.</p>
+        </article>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="label">01 — Écouter</div>
+          <p>On commence par vos ressentis : ce qui vous touche, vous intrigue, vous inspire.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="label">02 — Composer</div>
+          <p>Chaque réponse devient un pigment : nous mélangeons vos idées pour imaginer la suite.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="label">03 — Partager</div>
+          <p>Un retour soigné, une invitation à poursuivre la correspondance et à bâtir ensemble.</p>
+        </div>
+      </div>
+
+      <div class="poem">
+        Une page claire, un souffle, un murmure. <br />
+        Ici, vos mots déposent leurs reflets. <br />
+        Nous recueillons la lumière douce des confidences. <br />
+        Merci d'être là.
+      </div>
+    </section>
+
+    <section id="formulaire" class="form-wrapper">
+      <h2 class="section-title">Votre regard nous est précieux</h2>
+      <p>Le formulaire ci-dessous est hébergé par Google Forms. Vos réponses restent confidentielles et nourriront la prochaine étape du projet. Si l'aperçu ne s'affiche pas, ouvrez-le dans une nouvelle fenêtre :</p>
+      <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSe1lWf1i2lgP3acESdGjnKCp9jnM_tDFW1g3g6dX2w4KIzClw/viewform" target="_blank" rel="noopener">Ouvrir le formulaire dans Google Forms</a>.</p>
+      <iframe title="Formulaire du projet" src="https://docs.google.com/forms/d/e/1FAIpQLSe1lWf1i2lgP3acESdGjnKCp9jnM_tDFW1g3g6dX2w4KIzClw/viewform?embedded=true">Chargement…</iframe>
+    </section>
+  </main>
+
+  <footer>
+    Dans la douceur des mots et des images, chaque réponse compte. Merci pour votre temps et votre confiance.
+  </footer>
+</body>
+</html>
