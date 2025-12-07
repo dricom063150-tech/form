@@ -96,10 +96,17 @@
       line-height: 1.1;
     }
 
+    .intro-text {
+      display: grid;
+      gap: 14px;
+      max-width: 640px;
+    }
+
     .tagline {
       font-size: 18px;
-      max-width: 560px;
       color: #342f46;
+      line-height: 1.8;
+      margin: 0;
     }
 
     .cta-row {
@@ -167,7 +174,7 @@
     }
 
     main {
-      max-width: 1100px;
+      max-width: 1260px;
       margin: 0 auto;
       padding: 52px 6vw 90px;
     }
@@ -272,18 +279,25 @@
     }
 
     .form-wrapper {
-      margin-top: 40px;
+      margin-top: 52px;
       background: rgba(255, 255, 255, 0.95);
       border-radius: 18px;
-      padding: 20px;
+      padding: 28px;
       border: 1px solid rgba(31, 27, 44, 0.08);
       box-shadow: 0 14px 30px var(--shadow);
+    }
+
+    .form-wrapper.wide {
+      width: calc(100% + 6vw);
+      margin-left: -3vw;
+      margin-right: -3vw;
+      max-width: 1400px;
     }
 
     iframe {
       width: 100%;
       border: none;
-      height: 860px;
+      height: 1040px;
       border-radius: 12px;
       background: #fff;
       box-shadow: inset 0 0 0 1px rgba(31, 27, 44, 0.06);
@@ -299,7 +313,8 @@
     @media (max-width: 640px) {
       header { padding: 58px 6vw 64px; }
       .cta-row { flex-direction: column; align-items: flex-start; }
-      iframe { height: 900px; }
+      iframe { height: 980px; }
+      .form-wrapper.wide { width: 100%; margin: 40px 0 0; }
     }
   </style>
 </head>
@@ -309,28 +324,25 @@
       <div>
         <div class="eyebrow">Projet artistique en phase test</div>
         <h1>Les Petites Attentions</h1>
-        <p class="tagline">
-          Vous tenez entre vos mains l’un des tout premiers prototypes d’un projet en train de naître : 
-          "les petites attentions". 
-         Une petite attention, en général, c’est un geste simple mais chargé de sens.
-Ce n’est ni grand ni spectaculaire : c’est quelque chose de discret, presque humble, mais qui fait du bien.
-
-C’est :
-
-un mot glissé au bon moment,
-
-un objet choisi avec le cœur,
-
-un geste qui montre qu’on a pensé à quelqu’un,
-
-une délicatesse offerte sans attendre de retour,
-
-une manière de dire « je te vois », « je pense à toi », « tu comptes ».
-
-Une petite attention, c’est la beauté de l’infime :
-ce qui tient dans la main, dans une phrase, dans un sourire,
-mais qui reste longtemps dans la mémoire.
-        </p>
+        <div class="intro-text">
+          <p class="tagline">
+            Vous tenez entre vos mains l’un des tout premiers prototypes d’un projet en train de naître :
+            "les petites attentions".
+          </p>
+          <p class="tagline">
+            Une petite attention, en général, c’est un geste simple mais chargé de sens. Ce n’est ni grand ni spectaculaire :
+            c’est quelque chose de discret, presque humble, mais qui fait du bien.
+          </p>
+          <p class="tagline">
+            C’est un mot glissé au bon moment, un objet choisi avec le cœur, un geste qui montre qu’on a pensé à quelqu’un,
+            une délicatesse offerte sans attendre de retour, une manière de dire « je te vois », « je pense à toi »,
+            « tu comptes ».
+          </p>
+          <p class="tagline">
+            Une petite attention, c’est la beauté de l’infime : ce qui tient dans la main, dans une phrase, dans un sourire,
+            mais qui reste longtemps dans la mémoire.
+          </p>
+        </div>
         <div class="cta-row">
           <button class="btn btn-primary" onclick="document.getElementById('formulaire').scrollIntoView({ behavior: 'smooth' });">
             Partager votre ressenti
@@ -403,7 +415,7 @@ Rien d’imposant : juste un signe tendre qui dit *« tu comptes »*.
       </div>
     </section>
 
-    <section id="formulaire" class="form-wrapper">
+    <section id="formulaire" class="form-wrapper wide">
       <h2 class="section-title">Votre regard nous est précieux</h2>
       <p>
         Vous faites partie des toutes premières personnes à découvrir Les Petites Attentions.
